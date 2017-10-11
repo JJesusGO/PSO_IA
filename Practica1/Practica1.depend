@@ -39,3 +39,40 @@
 1507649804 source:c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\practica1\psomanager.cpp
 	"PSOManager.h"
 
+1507648590 source:c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\particula.cpp
+	"Particula.h"
+
+1507648265 c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\particula.h
+	<cstdlib>
+	<cstdio>
+	"Random.h"
+
+1507653886 c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\random.h
+	<cstdlib>
+	<string>
+	<ctime>
+	<cctype>
+
+1507649511 source:c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\pso.cpp
+	"PSO.h"
+
+1507649593 c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\pso.h
+	<cstdio>
+	<cmath>
+	"Particula.h"
+
+1507401747 source:c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\random.cpp
+	"Random.h"
+
+1507653533 source:c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\main.cpp
+	<iostream>
+	<cmath>
+	"Random.h"
+	"Particula.h"
+	"PSO.h"
+	"PSOManager.h"
+
+1507648100 c:\users\jesus\documents\mega\dicis\inteligencia artificial\practica1\pso_ia\practica1\psomanager.h
+	<cstdio>
+	"PSO.h"
+
