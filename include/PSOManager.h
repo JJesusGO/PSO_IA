@@ -2,6 +2,7 @@
 #ifndef PSOMANAGER_H
 
 #include <cstdio>
+#include <conio.h>
 #include "PSO.h"
 
 class PSOManager{

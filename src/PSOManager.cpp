@@ -23,7 +23,7 @@ void PSOManager::Run(){
     printf("CALCULANDO...\n\n");
 
     FILE *file = fopen("log.txt","w");
-    FILE *data = fopen("log_data.txt","w");
+    FILE *data = fopen("data.txt","w");
     if(file){
         fprintf(file,"SEED: %s\n",Random::GetSeed().GetSeedString().c_str());
         pso->MostrarPSO(file);
@@ -43,6 +43,8 @@ void PSOManager::Run(){
                     pso->MostrarMejorParticula(file);
                     fprintf(file,"\n\n");
                 }
+                if(data)
+                    fprintf(data,"%2.6e\t%d\n",pso->GetErrorAbs(valor),t);
                 impreso = true;
             }
         if(pso->GetErrorAbs(valor) != erroractual && !impreso){
