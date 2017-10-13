@@ -53,32 +53,58 @@ int Seleccionar(Particula &particula, Particula &mejor) {
 void MostrarTelon() {
 	printf("\n\n--------------------------------------\n\n");
 }
-
 int main() {
 
 	Random::SetRandom();
 	Random::SetSeed(Seed(6));
 
+	int      iteraciones = 0;
 	int       t = 0;
-	float  rmin[30],
-		rmax[30];
-	for (unsigned int i = 0;i<30;i++) {
-		rmin[i] = -5.12f;
-		rmax[i] = 5.12f;
-	}
-	//float porcentajes[] = {0,10,20,30,40,50,60,70,80,90};
+	int      dimensiones;
+	float    *rmin,
+		     *rmax;
+
 	//Menu
 	int opcion;
+
 	printf("Que funcion desea evaluar?\n");
-	printf("\n1)Sumatroia de  Xi^2 que va desde i=0 hasta n-1 de  Xi^2 que va desde i=0 hasta n-1 ");
-	printf("\n\n\n2)Sumatoria de  Xi^2 que va desde i=0 hasta n-1 + la Productoria de  Xi^2 que va desde i=0 hasta n-1 ");
+	printf("\n1) Sumatoria de  Xi^2 que va desde i=0 hasta n-1  ");
+	printf("\n\n2) Sumatoria de  Xi^2 que va desde i=0 hasta n-1 + la Productoria de  Xi^2 que va desde i=0 hasta n-1 ");
 	printf("\n\n3) Sumatoria de (Xi + 1/2)^2 que va desde i=0 hasta n-1");
-	printf("\n\n\n4) max|Xi|, 0 <= i < n");
+	printf("\n\n4) Max|Xi|, 0 <= i < n");
 	printf("\n\nOpcion: ");
-	scanf_s("%i", & opcion);
+	scanf("%i", & opcion);
+    printf("\nDimensiones:\n-> ");
+	scanf("%i", &dimensiones);
 
+	rmin = new	 float[dimensiones];
+	rmax = new	 float[dimensiones];
 
-	PSO pso(100, rmin, rmax, 30, 100000);
+    if (opcion == 1)
+	{
+        for (unsigned int i = 0;i<dimensiones;i++) {
+            rmin[i] = -5.12f;
+            rmax[i] = 5.12f;
+        }
+	}
+	if (opcion == 2)
+	{
+        for (unsigned int i = 0;i<dimensiones;i++) {
+            rmin[i] = -10.0f;
+            rmax[i] = 10.0f;
+        }
+
+	}
+	if (opcion == 3 || opcion == 4)
+	{
+        for (unsigned int i = 0;i<dimensiones;i++) {
+            rmin[i] = -100.0f;
+            rmax[i] = 100.0f;
+        }
+
+	}
+
+	PSO pso(100, rmin, rmax, dimensiones, 500000);
 	if (opcion == 1)
 	{
 		pso.SetFunciones(Evaluacion1, Actualizar, Seleccionar);
@@ -97,15 +123,16 @@ int main() {
 	}
 
 	pso.IniciarEnjambre(2, 2, -0.1, 0.1);
-
 	PSOManager  manager(&pso, 0);
-	//manager.SetPorcentajes(porcentajes,10);
 
 	pso.MostrarPSO();
 	MostrarTelon();
 	manager.Run();
 	MostrarTelon();
 	printf("%s", Random::GetSeed().GetSeedString().c_str());
+
+	delete []rmin;
+	delete []rmax;
 
 	return 0;
 }
