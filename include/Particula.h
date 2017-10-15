@@ -35,12 +35,18 @@ public:
 
     private:
 	//Variables que almacenan informacion sobre las parametros de la particula
+
+	//dimensiones
 	int   Dim;
+	//PArametros Posicion,Mejor Posicion, Velocidad
 	float *Xi;
 	float *Pi;
 	float *Vi;
+	//Constantes de la formula de velocidad del PSO
 	float  C1, C2;
+	//Velocidad maxima y velicdad minima
 	float  Vmax, Vmin;
+	//Mejor Psocion de la particula 
 	float  FitnessX, FitnessP;
 
 };
