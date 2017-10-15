@@ -7,10 +7,11 @@
 class Particula
 {
 public:
+	//Contructor y destructor 
 	Particula();
 	~Particula();
 public:
-
+	//Funciones que reciben y regresaran informacion sobre la particula
 	void IniciarParticula(float c1, float c2, float vmin, float vmax, int dim);
 	void ActualizarPosicion(void);
 	void SetPosicion(int i,float valor);
@@ -22,6 +23,7 @@ public:
 	const void MostrarParticula(int n) const;
 	const void MostrarParticula(int n,FILE *file) const;
 
+	//Funciones que regresan informacion sobre los parametros  de la particula
 	const inline float GetVelocidad(int i) const { return Vi[i]; }
 	const inline float GetVelocidadMinima() const { return Vmin; }
 	const inline float GetVelocidadMaxima() const { return Vmax; }
@@ -32,7 +34,7 @@ public:
 	const inline float GetFitnessP() const { return FitnessP; }
 
     private:
-
+	//Variables que almacenan informacion sobre las parametros de la particula
 	int   Dim;
 	float *Xi;
 	float *Pi;
