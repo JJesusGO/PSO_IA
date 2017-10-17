@@ -54,7 +54,7 @@ void Particula::IniciarParticula(float c1, float c2, float vmin, float vmax,int 
 	}
 }
 void Particula::SetPosicion(int i, float valor)
-{o
+{
 	//Almacena la posicion que da el PSO dentro de la variable Xi de la particula
 	Xi[i] = valor;
 }
@@ -71,7 +71,7 @@ void Particula::SetMejorPosicion(int i, float valor)
 }
 void Particula::ActualizarVelocidad(Particula &Particula)
 {
-	//Obtencion de la velicidad 
+	//Obtencion de la velicidad
 	float Y1, Y2;
 	for (unsigned int d = 0;d < Dim;d++)
 	{
@@ -99,10 +99,10 @@ void Particula::SetFitnessX(float valor)
 	FitnessX = valor;
 }
 void Particula::SetFitnessP(float valor)
-{	
+{
 	FitnessP = valor;
 }
-const void Particula::MostrarParticula(int n) const 
+const void Particula::MostrarParticula(int n) const
 {
 	//Funcion que muestra la informacion de la particula
 	printf("C1[%i] = %+2.4f", n, C1);
@@ -119,7 +119,7 @@ const void Particula::MostrarParticula(int n) const
 	for (int d = 0; d < Dim;d++)
 		printf("%+2.4f ", Pi[d]);
 }
-const void Particula::MostrarParticula(int n,FILE *file) const 
+const void Particula::MostrarParticula(int n,FILE *file) const
 {
 	//Funcion que imprime la infmacion d ela particula en un archivo de texto
 	fprintf(file,"C1[%i] = %+2.4f", n, C1);
